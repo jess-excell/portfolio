@@ -3,24 +3,17 @@ import Button from "./Button";
 interface props {
     label: string;
     link: string;
-    scrolled: boolean;
     external?: boolean;
-    width: "narrow" | "wide"
 }
 
-const btn = ({label, link, scrolled, external, width}: props) => {
+const btn = ({label, link, external}: props) => {
     const onClick = () => {
-        const location = external ? link : `#${link}`;
-        window.location.replace(location);
+        external 
+        ? window.location.href = link  
+        : window.location.replace(`#${link}`);
     }
     return <Button 
-        className="button" 
-        style={
-            width=="narrow"  
-                ? {fontSize: "small"} 
-                : scrolled ? {fontSize: "medium"} 
-                : {}
-            } 
+        className="button"
         label={label} 
         onClick={onClick} 
     />;

@@ -7,23 +7,18 @@ import Contact from "./sections/Contact";
 import BaseModal from "./modals/BaseModal";
 
 interface props {
-    scrolled: boolean;
-    width: "wide" | "narrow";
+    height: number | undefined
 };
 
-const content = ({scrolled, width}: props): React.JSX.Element => {
-    return (
-        <main style={width == "narrow" ? {marginTop: "70px"} : scrolled ? {marginTop: "200px"}: {marginTop: "300px"}}>
-            <div style={{margin: "40px 0"}}>
-                <BaseModal />
-                <Profile />
-                <Experience />
-                <Projects />
-                <Certifications />
-                <Contact />
-            </div>
-        </main>
-    );
-};
+const content = ({height}: props): React.JSX.Element => (
+    <main style={{paddingTop: `${height}px`}}>
+        <BaseModal />
+        <Profile />
+        <Experience />
+        <Projects />
+        <Certifications />
+        <Contact />
+    </main>
+);
 
 export default content;

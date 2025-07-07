@@ -6,11 +6,12 @@ interface props {
 }
 
 const Header = ({scrolled, width}: props) => {
-    const styles = width=="narrow" 
+    const styles = width == "narrow" 
     ? {
         heading: {
             display: "inline-block",
-            fontSize: "18px"
+            fontSize: "18px",
+            marginBottom: 0
         }, 
         subheading: {
             display: "inline-block",
@@ -20,38 +21,36 @@ const Header = ({scrolled, width}: props) => {
     : scrolled
     ? {
         heading: {
-            padding: "20px 0 40px",
             display: "inline-block",
             fontSize: "24px"
         }, 
         subheading: {
+            padding: "20px 0 40px",
             display: "inline-block",
             fontSize: "24px",
         }
     } 
     : {
         heading: {
-            paddingTop: "40px",
             display: "block"
         }, 
         subheading: {
-            display: "block",
-            paddingBottom: "60px"
+            padding: "40px 0 60px",
+            display: "block"
         }
     }; 
 
     return (
-            <header>
+            <header id="header">
                 <div className="container">
-                    <ul>
-                        <li><NavButton width={width} scrolled={scrolled} label="About" link="about"/></li>
-                        <li><NavButton width={width} scrolled={scrolled} label="Experience" link="experience"/></li>
-                        <li><NavButton width={width} scrolled={scrolled} label="Projects" link="projects"/></li>
-                        <li><NavButton width={width} scrolled={scrolled} label="Education" link="education"/></li>
-                        <li><NavButton width={width} scrolled={scrolled} label="Contact" link="contact"/></li>
-                        <li><NavButton width={width} scrolled={scrolled} label="LinkedIn" external link="https://www.linkedin.com/in/jessica-excell/"/></li>
-                    </ul>
-
+                    <div className="buttons">
+                        <NavButton label="About" link="about"/>
+                        <NavButton label="Experience" link="experience"/>
+                        <NavButton label="Projects" link="projects"/>
+                        <NavButton label="Education" link="education"/>
+                        <NavButton label="Contact" link="contact"/>
+                        <NavButton label="LinkedIn" external link="https://www.linkedin.com/in/jessica-excell/"/>
+                    </div>
                     <h1 style={styles.heading}>Jessica Excell&nbsp;</h1>
                     <h1 style={styles.subheading} className="subheading">Software Engineering Undergraduate</h1>                    
                 </div>

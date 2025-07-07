@@ -7,14 +7,14 @@ import useHeader from './hooks/useHeader';
 import { ModalProvider } from './contexts/modalContext';
 
 function App() {
-  const { scrolled, width } = useHeader();
+  const { scrolled, width, height } = useHeader();
 
   return (
     <React.Fragment>
       <ModalProvider>
         <React.Fragment>
           <Header scrolled={scrolled} width={width}/>
-          <MainContent scrolled={scrolled} width={width}/>
+          <MainContent height={height}/>
           <Footer />
         </React.Fragment>
       </ModalProvider>
