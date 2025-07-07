@@ -179,11 +179,15 @@ main h2 {
 }
 
 .contact-container button:hover {
-  color: var(--card-accent);
+  cursor: pointer;
 }
 
 .contact-container button:hover img {
   filter: invert(22%) sepia(93%) saturate(2521%) hue-rotate(317deg) brightness(85%) contrast(92%);
+}
+
+.contact-container button:hover p {
+  color: var(--card-accent);
 }
 
 .modal {
