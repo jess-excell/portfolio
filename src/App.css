@@ -35,11 +35,13 @@ header {
 
 header .container {
   width: 100vw;
+  transition: 0.3s ease-in-out;
 }
 
 header .container h1 {
   font-size: 32px;
   margin-bottom: 0;
+  transition: 0.2s ease-in-out;
 }
 
 header .container .subheading {
@@ -47,6 +49,7 @@ header .container .subheading {
   font-weight: 200;
   padding: 0 0 20px;
   margin-top: 0;
+  transition: 0.2s ease-in-out;
 }
 
 header .container .buttons {
